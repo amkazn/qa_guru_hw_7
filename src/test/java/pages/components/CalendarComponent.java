@@ -9,13 +9,13 @@ public class CalendarComponent {
     private SelenideElement yearSelector = $(".react-datepicker__year-select"),
             monthSelector = $(".react-datepicker__month-select");
 
-    private SelenideElement daySelector(String day, String month){
-        return $(String.format("[class*='%s'][aria-label*='%s']", day, month));
+    private SelenideElement daySelector(String day){
+        return $(String.format("[class*='%s']:not([class*='outside-month'])", day));
     }
 
     public void setDate(String day, String month, String year){
         yearSelector.selectOption(year);
         monthSelector.selectOption(month);
-        daySelector(day,month).click();
+        daySelector(day).click();
     }
 }
