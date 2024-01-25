@@ -1,21 +1,19 @@
 package pages.components;
 
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ResultsTableComponent {
-    private String locator;
 
-    public void setLocator(String locator) {
-        this.locator = locator;
-    }
+    private SelenideElement resultsTableLocator = $(".table-responsive");
 
     public void checkEntry (String key, String value) {
-        $(locator)
+        resultsTableLocator
                 .$(byText(key))
                 .parent()
                 .shouldHave(text(value));
-
     }
 }
