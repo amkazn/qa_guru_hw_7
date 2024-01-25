@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class RegistrationPage {
 
     private ResultsTableComponent resultsTable = new ResultsTableComponent();
+    private CalendarComponent calendarComponent = new CalendarComponent();
     private SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             eMailInput = $("#userEmail"),
@@ -68,7 +69,7 @@ public class RegistrationPage {
 
     public RegistrationPage setBirthDate(String day, String month, String year){
         calendarInput.click();
-        CalendarComponent.setDate(day, month, year);
+        calendarComponent.setDate(day, month, year);
 
         return this;
     }
@@ -127,7 +128,6 @@ public class RegistrationPage {
     }
 
     public RegistrationPage checkResults(String key, String value){
-        resultsTable.setLocator(".table-responsive");
         resultsTable.checkEntry(key,value);
 
         return this;

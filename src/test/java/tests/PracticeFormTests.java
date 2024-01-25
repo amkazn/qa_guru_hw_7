@@ -3,7 +3,6 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-
 public class PracticeFormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -18,7 +17,7 @@ public class PracticeFormTests extends TestBase {
                 .setEMail("s@holmes.com")
                 .setGender("Male")
                 .setUserNumber("1234567890")
-                .setBirthDate("02", "June", "1990")
+                .setBirthDate("30", "June", "1990")
                 .setSubjects("Computer Science","Maths", "Physics")
                 .setHobbies("Sports", "Reading", "Music")
                 .uploadPicture("pic.jpg")
@@ -32,13 +31,12 @@ public class PracticeFormTests extends TestBase {
                 .checkResults("Student Email", "s@holmes.com")
                 .checkResults("Gender", "Male")
                 .checkResults("Mobile", "1234567890")
-                .checkResults("Date of Birth", "02 June,1990")
+                .checkResults("Date of Birth", "30 June,1990")
                 .checkResults("Subjects", "Computer Science, Maths, Physics")
                 .checkResults("Hobbies", "Sports, Reading, Music")
                 .checkResults("Picture", "pic.jpg")
                 .checkResults("Address", "Baker Street 221b")
                 .checkResults("State and City", "NCR Noida");
-
     }
 
     @Test
@@ -58,7 +56,6 @@ public class PracticeFormTests extends TestBase {
                 .checkResults("Student Name", "Sherlock Holmes")
                 .checkResults("Gender", "Male")
                 .checkResults("Mobile", "1234567890");
-
     }
 
     @Test
