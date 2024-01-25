@@ -10,7 +10,7 @@ public class CalendarComponent {
             monthSelector = $(".react-datepicker__month-select");
 
     private SelenideElement daySelector(String day){
-        return $(String.format("[class*='%s']:not([class*='outside-month'])", day));
+        return $(String.format("[class*='day--0%s']:not([class*='outside-month'])", day));
     }
 
     public void setDate(String day, String month, String year){
